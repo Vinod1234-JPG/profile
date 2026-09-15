@@ -19,6 +19,12 @@
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
+/* ═══ Smooth Scroll-Snap Container ═══ */
+html {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -27,7 +33,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Utilities for glass and glow */
+/* Each major section snaps */
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+
+/* ═══ Sticky Section Headers ═══ */
+.sticky-header {
+  position: sticky;
+  top: 5rem;   /* below fixed navbar */
+  z-index: 10;
+  will-change: transform;
+}
+
+/* ═══ Parallax Scroll Wrapper ═══ */
+.parallax-slow {
+  will-change: transform;
+  transform: translateY(calc(var(--scroll-offset, 0) * -0.15px));
+  transition: transform 0.1s linear;
+}
+
+.parallax-fast {
+  will-change: transform;
+  transform: translateY(calc(var(--scroll-offset, 0) * 0.08px));
+  transition: transform 0.1s linear;
+}
+
+/* ═══ Utilities for glass and glow ═══ */
 .glass {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
@@ -38,4 +71,28 @@ body {
   background: linear-gradient(to right, #ffffff, #a1a1aa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* ═══ Section Reveal Animation ═══ */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══ Scroll Progress Bar ═══ */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), #fb923c);
+  z-index: 9999;
+  transform-origin: left;
+  will-change: transform;
 }

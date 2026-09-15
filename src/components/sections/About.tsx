@@ -7,15 +7,15 @@ import Link from "next/link";
 export function About() {
   return (
     <section id="about" className="py-32 relative border-t border-white/5 bg-[#0a0a0a]">
-      {/* Background glow */}
-      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Background glow — parallax */}
+      <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] pointer-events-none parallax-slow" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
           
           {/* Left Sticky Header */}
-          <div className="lg:col-span-5 lg:sticky lg:top-32">
+          <div className="lg:col-span-5 sticky-header">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

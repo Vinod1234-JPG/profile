@@ -12,12 +12,25 @@ export default function Home() {
     <>
       <Navbar />
       <main className="flex flex-col flex-grow">
-        <Hero />
-        <About />
-        <Skills />
-        <Timeline />
-        <Projects />
-        <Contact />
+        {/* Each wrapper div gets scroll-snap alignment */}
+        <div className="snap-section">
+          <Hero />
+        </div>
+        <div className="snap-section">
+          <About />
+        </div>
+        <div className="snap-section">
+          <Skills />
+        </div>
+        <div className="snap-section">
+          <Timeline />
+        </div>
+        <div className="snap-section">
+          <Projects />
+        </div>
+        <div className="snap-section">
+          <Contact />
+        </div>
       </main>
       <Footer />
     </>

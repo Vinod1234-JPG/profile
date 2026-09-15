@@ -6,8 +6,8 @@ import { Send, Mail, ExternalLink } from "lucide-react";
 export function Contact() {
   return (
     <section id="contact" className="py-32 relative overflow-hidden bg-background">
-      {/* Background elements */}
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px] pointer-events-none" />
+      {/* Background elements — parallax */}
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[150px] pointer-events-none parallax-slow" />
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         

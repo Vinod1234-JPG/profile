@@ -34,9 +34,9 @@ export function Hero() {
       id="hero" 
       className="relative min-h-screen flex flex-col justify-between pt-28 md:pt-36 pb-12 overflow-hidden bg-[#0a0a0c]"
     >
-      {/* Warm Golden / Orange Ambient Glow behind the constellation and portrait */}
-      <div className="absolute top-[15%] right-[5%] w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] bg-[#f97316] rounded-full blur-[160px] opacity-15 pointer-events-none" />
-      <div className="absolute top-[35%] right-[20%] w-[35vw] h-[35vw] max-w-[450px] max-h-[450px] bg-[#fb923c] rounded-full blur-[130px] opacity-20 pointer-events-none" />
+      {/* Warm Golden / Orange Ambient Glow — parallax */}
+      <div className="absolute top-[15%] right-[5%] w-[55vw] h-[55vw] max-w-[700px] max-h-[700px] bg-[#f97316] rounded-full blur-[160px] opacity-15 pointer-events-none parallax-slow" />
+      <div className="absolute top-[35%] right-[20%] w-[35vw] h-[35vw] max-w-[450px] max-h-[450px] bg-[#fb923c] rounded-full blur-[130px] opacity-20 pointer-events-none parallax-fast" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10 my-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-4 items-center">

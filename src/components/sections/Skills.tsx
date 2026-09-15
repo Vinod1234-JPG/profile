@@ -39,8 +39,8 @@ const skillCategories = [
 export function Skills() {
   return (
     <section id="skills" className="py-32 relative border-t border-white/5 bg-[#0a0a0a]">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+      {/* Background glow — parallax */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none parallax-slow" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
