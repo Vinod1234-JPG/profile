@@ -44,7 +44,7 @@ export function ParticleNetwork() {
       draw(ctx: CanvasRenderingContext2D) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(124, 58, 237, 0.5)"; // Accent color (Purple)
+        ctx.fillStyle = "rgba(249, 115, 22, 0.5)"; // Accent color (Orange)
         ctx.fill();
       }
     }
@@ -75,7 +75,7 @@ export function ParticleNetwork() {
 
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(124, 58, 237, ${0.2 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(249, 115, 22, ${0.2 * (1 - distance / 150)})`;
             ctx.lineWidth = 1;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);

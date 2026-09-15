@@ -5,8 +5,8 @@
   --foreground: #f3f4f6;
   --muted: #a1a1aa;
   --border: #27272a;
-  --accent: #7c3aed; /* purple-600 */
-  --accent-glow: rgba(124, 58, 237, 0.15);
+  --accent: #f97316; /* orange-500 */
+  --accent-glow: rgba(249, 115, 22, 0.15);
 }
 
 @theme inline {

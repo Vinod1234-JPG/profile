@@ -107,7 +107,7 @@ export function Projects() {
                 {/* Spotlight effect */}
                 <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" 
                   style={{
-                    background: 'radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(124, 58, 237, 0.15), transparent 40%)'
+                    background: 'radial-gradient(600px circle at var(--x, 50%) var(--y, 50%), rgba(249, 115, 22, 0.15), transparent 40%)'
                   }}
                 />
 
