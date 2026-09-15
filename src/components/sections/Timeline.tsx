@@ -25,17 +25,9 @@ const timelineItems = [
     type: "education",
     title: "BE — Computer Science and Engineering",
     organization: "Maharaja Institute of Technology Mysore",
-    date: "Current (CGPA: 9.55)",
+    date: "Current (CGPA: 9.05)",
     description: "Pursuing bachelor's degree with a focus on practical software engineering and systems design.",
     icon: GraduationCap
-  },
-  {
-    type: "achievement",
-    title: "Cricket Athlete & VTU Champions",
-    organization: "MITM College Cricket Team",
-    date: "2026",
-    description: "Won the Mysore District Level VTU Competition and secured 4th place at the State Level Competition. Previously awarded Best Bowler in Malnad Cup U-14.",
-    icon: Award
   },
   {
     type: "achievement",
