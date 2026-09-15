@@ -55,8 +55,8 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tight text-accent flex items-center gap-2">
-          VP
+        <Link href="/" className="text-xl font-bold tracking-tight flex items-center">
+          <span className="text-white">V</span><span className="text-accent">P</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -81,9 +81,9 @@ export function Navbar() {
           ))}
           <Link
             href="#contact"
-            className="text-sm font-medium px-4 py-2 rounded-full border border-white/20 bg-background text-white hover:border-accent hover:text-accent transition-colors flex items-center gap-2"
+            className="text-sm font-medium px-4 py-2 rounded-full border border-white/20 bg-background text-white hover:border-white/40 transition-colors flex items-center gap-2"
           >
-            <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
             Available for work
           </Link>
         </nav>
@@ -121,9 +121,9 @@ export function Navbar() {
                 <Link
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 bg-background text-white hover:border-accent hover:text-accent font-medium text-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 bg-background text-white hover:border-white/40 font-medium text-sm"
                 >
-                  <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
                   Available for work
                 </Link>
               </div>
