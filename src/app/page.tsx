@@ -3,7 +3,6 @@ import { Footer } from "@/components/ui/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
-import { Timeline } from "@/components/sections/Timeline";
 import { Projects } from "@/components/sections/Projects";
 import { Contact } from "@/components/sections/Contact";
 
@@ -22,9 +21,7 @@ export default function Home() {
         <div className="snap-section">
           <Skills />
         </div>
-        <div className="snap-section">
-          <Timeline />
-        </div>
+
         <div className="snap-section">
           <Projects />
         </div>
