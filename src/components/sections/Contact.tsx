@@ -1,9 +1,37 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Mail, ExternalLink } from "lucide-react";
+import { Send, Mail, ExternalLink, CheckCircle2, AlertCircle } from "lucide-react";
 
 export function Contact() {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/vvinod95792@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+      
+      if (response.ok) {
+        setStatus("success");
+        form.reset();
+        setTimeout(() => setStatus("idle"), 5000); // Reset status after 5s
+      } else {
+        setStatus("error");
+      }
+    } catch (err) {
+      setStatus("error");
+    }
+  };
+
   return (
     <section id="contact" className="py-32 relative bg-transparent overflow-hidden">
 
@@ -64,7 +92,7 @@ export function Contact() {
               transition={{ delay: 0.1 }}
               className="bg-white/60 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
             >
-              <form className="space-y-6" action="https://formsubmit.co/vvinod95792@gmail.com" method="POST">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 {/* Optional settings for FormSubmit */}
                 <input type="hidden" name="_subject" value="New message from Portfolio!" />
                 <input type="hidden" name="_captcha" value="false" />
@@ -79,7 +107,8 @@ export function Contact() {
                       name="name"
                       required
                       placeholder="John Doe"
-                      className="w-full bg-black/[0.03] border border-black/10 rounded-xl px-4 py-3.5 text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 focus:bg-white transition-all"
+                      className="w-full bg-black/[0.03] border border-black/10 rounded-xl px-4 py-3.5 text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 focus:bg-white transition-all disabled:opacity-50"
+                      disabled={status === "loading"}
                     />
                   </div>
                   
@@ -91,7 +120,8 @@ export function Contact() {
                       name="email"
                       required
                       placeholder="john@example.com"
-                      className="w-full bg-black/[0.03] border border-black/10 rounded-xl px-4 py-3.5 text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 focus:bg-white transition-all"
+                      className="w-full bg-black/[0.03] border border-black/10 rounded-xl px-4 py-3.5 text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 focus:bg-white transition-all disabled:opacity-50"
+                      disabled={status === "loading"}
                     />
                   </div>
                 </div>
@@ -104,16 +134,43 @@ export function Contact() {
                     rows={5}
                     required
                     placeholder="Tell me about your project..."
-                    className="w-full bg-black/[0.03] border border-black/10 rounded-xl px-4 py-3.5 text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 focus:bg-white transition-all resize-none"
+                    className="w-full bg-black/[0.03] border border-black/10 rounded-xl px-4 py-3.5 text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 focus:bg-white transition-all resize-none disabled:opacity-50"
+                    disabled={status === "loading"}
                   />
                 </div>
 
                 <button 
                   type="submit"
-                  className="w-full py-4 rounded-xl bg-black text-white font-bold flex items-center justify-center gap-2 hover:bg-black/80 transition-colors group"
+                  disabled={status === "loading" || status === "success"}
+                  className={`w-full py-4 rounded-xl text-white font-bold flex items-center justify-center gap-2 transition-all group ${
+                    status === "success" 
+                      ? "bg-green-600 hover:bg-green-700" 
+                      : status === "error"
+                      ? "bg-red-600 hover:bg-red-700"
+                      : "bg-black hover:bg-black/80"
+                  }`}
                 >
-                  Send Message
-                  <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  {status === "loading" && (
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  )}
+                  {status === "success" && (
+                    <>
+                      Message Sent!
+                      <CheckCircle2 size={18} />
+                    </>
+                  )}
+                  {status === "error" && (
+                    <>
+                      Error sending message. Try again?
+                      <AlertCircle size={18} />
+                    </>
+                  )}
+                  {status === "idle" && (
+                    <>
+                      Send Message
+                      <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </>
+                  )}
                 </button>
               </form>
             </motion.div>
