@@ -28,6 +28,8 @@ const projects = [
     subtitle: "Placement Management Platform",
     description: "Full-stack placement platform connecting students, placement administrators, and companies through job drives, assessments, interviews, feedback, recruitment workflows, and analytics.",
     tags: ["Full Stack", "Platform"],
+    link: "https://mitm-placepro.vercel.app/login",
+    image: "/projects/mitm-placepro.png",
   },
   {
     id: "04",
