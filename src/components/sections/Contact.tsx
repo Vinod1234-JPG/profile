@@ -64,13 +64,20 @@ export function Contact() {
               transition={{ delay: 0.1 }}
               className="bg-white/60 backdrop-blur-xl rounded-[24px] p-8 md:p-12 border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
             >
-              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-6" action="https://formsubmit.co/vvinod95792@gmail.com" method="POST">
+                {/* Optional settings for FormSubmit */}
+                <input type="hidden" name="_subject" value="New message from Portfolio!" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-semibold text-black/70">Name</label>
                     <input 
                       type="text" 
                       id="name"
+                      name="name"
+                      required
                       placeholder="John Doe"
                       className="w-full bg-black/[0.03] border border-black/10 rounded-xl px-4 py-3.5 text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 focus:bg-white transition-all"
                     />
@@ -81,6 +88,8 @@ export function Contact() {
                     <input 
                       type="email" 
                       id="email"
+                      name="email"
+                      required
                       placeholder="john@example.com"
                       className="w-full bg-black/[0.03] border border-black/10 rounded-xl px-4 py-3.5 text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 focus:bg-white transition-all"
                     />
@@ -91,7 +100,9 @@ export function Contact() {
                   <label htmlFor="message" className="text-sm font-semibold text-black/70">Message</label>
                   <textarea 
                     id="message"
+                    name="message"
                     rows={5}
+                    required
                     placeholder="Tell me about your project..."
                     className="w-full bg-black/[0.03] border border-black/10 rounded-xl px-4 py-3.5 text-black placeholder:text-black/30 focus:outline-none focus:border-black/30 focus:bg-white transition-all resize-none"
                   />
