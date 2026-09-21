@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, LineChart, BookOpen } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 export function About() {
   return (
@@ -85,41 +86,55 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: 0.2 }}
-              className="bg-white/60 backdrop-blur-xl rounded-[32px] p-8 md:p-10 md:px-12 border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col justify-between"
+              className="bg-white/60 backdrop-blur-xl rounded-[32px] border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col overflow-hidden group"
             >
-              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-10">
-                <div className="flex items-center gap-4">
-                  {/* Icon Container */}
-                  <div className="w-12 h-12 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600">
-                    <LineChart size={20} strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-black tracking-tight">YVB&Co</h3>
-                    <p className="text-[10px] text-orange-600 uppercase tracking-widest font-bold mt-1">Partner Studio</p>
-                  </div>
-                </div>
-                {/* Role Badge */}
-                <div className="px-4 py-2 rounded-full border border-black/10 bg-transparent text-xs text-black/60 font-semibold">
-                  Role: COP
-                </div>
+              {/* Image Section */}
+              <div className="relative w-full h-48 md:h-64 border-b border-black/5 bg-black/5 overflow-hidden">
+                <Image 
+                  src="/about/yvb-co.png" 
+                  alt="YVB&Co"
+                  fill
+                  className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
-              
-              <div>
-                <h4 className="text-2xl font-bold text-black mb-4 tracking-tight">
-                  Engineer your vision.
-                </h4>
+
+              {/* Content Section */}
+              <div className="p-8 md:p-10 md:px-12 flex flex-col justify-between flex-grow">
+                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 mb-10">
+                  <div className="flex items-center gap-4">
+                    {/* Icon Container */}
+                    <div className="w-12 h-12 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-orange-600">
+                      <LineChart size={20} strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-black tracking-tight">YVB&Co</h3>
+                      <p className="text-[10px] text-orange-600 uppercase tracking-widest font-bold mt-1">Partner Studio</p>
+                    </div>
+                  </div>
+                  {/* Role Badge */}
+                  <div className="px-4 py-2 rounded-full border border-black/10 bg-transparent text-xs text-black/60 font-semibold">
+                    Role: COP
+                  </div>
+                </div>
                 
-                <p className="text-black/70 text-base leading-[1.8] mb-8 font-normal">
-                  YVB&Co is an independent technology studio based in India. We're a team of six engineers and designers building websites, apps, ERP systems, and tools around the way businesses actually work.
-                </p>
-                
-                <Link
-                  href="#contact"
-                  className="inline-flex items-center gap-2 text-sm font-bold text-black hover:opacity-70 transition-opacity group"
-                >
-                  Work with us 
-                  <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
-                </Link>
+                <div>
+                  <h4 className="text-2xl font-bold text-black mb-4 tracking-tight">
+                    Engineer your vision.
+                  </h4>
+                  
+                  <p className="text-black/70 text-base leading-[1.8] mb-8 font-normal">
+                    YVB&Co is an independent technology studio based in India. We're a team of six engineers and designers building websites, apps, ERP systems, and tools around the way businesses actually work.
+                  </p>
+                  
+                  <Link
+                    href="https://yvb-co.vercel.app/"
+                    target="_blank"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-black hover:opacity-70 transition-opacity group/link"
+                  >
+                    Work with us 
+                    <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
+                  </Link>
+                </div>
               </div>
             </motion.div>
 
