@@ -37,6 +37,7 @@ const projects = [
     subtitle: "Research Management Platform",
     description: "Digital research administration platform supporting the academic research lifecycle—from candidate registration and supervisor allocation to RAC reviews, progress reports, publications, examinations, and graduation.",
     tags: ["Research", "SaaS"],
+    link: "https://mitm-placepro.vercel.app/login",
     image: "/projects/mrf.png",
   },
   {
