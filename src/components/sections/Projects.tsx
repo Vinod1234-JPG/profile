@@ -11,6 +11,7 @@ const projects = [
     subtitle: "No Due Clearance Management System",
     description: "Multi-tenant SaaS that digitizes student No Due Certificate workflows, connecting faculty, coordinators, library, accounts, HODs, and administration with automated dues, payments, approvals, and PDF certificates.",
     tags: ["Full Stack", "SaaS", "Next.js"],
+    link: "https://noc-portal-self.vercel.app/login",
   },
   {
     id: "02",
@@ -113,7 +114,8 @@ export function Projects() {
                   </p>
                   
                   <Link
-                    href="#"
+                    href={project.link || "#"}
+                    target={project.link ? "_blank" : "_self"}
                     className="inline-flex items-center gap-2 text-sm font-bold text-black hover:opacity-70 transition-opacity group/link"
                   >
                     View details 
