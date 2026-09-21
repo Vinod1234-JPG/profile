@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
@@ -12,6 +13,7 @@ const projects = [
     description: "Multi-tenant SaaS that digitizes student No Due Certificate workflows, connecting faculty, coordinators, library, accounts, HODs, and administration with automated dues, payments, approvals, and PDF certificates.",
     tags: ["Full Stack", "SaaS", "Next.js"],
     link: "https://noc-portal-self.vercel.app/login",
+    image: "/projects/no-due-portal.png",
   },
   {
     id: "02",
@@ -90,6 +92,20 @@ export function Projects() {
                 transition={{ delay: 0.1 * idx }}
                 className="group bg-white/60 backdrop-blur-xl rounded-[24px] p-8 md:p-10 border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-shadow duration-300 relative overflow-hidden"
               >
+                {/* Optional Background Image */}
+                {project.image && (
+                  <div className="absolute inset-0 z-0 pointer-events-none">
+                    <Image 
+                      src={project.image} 
+                      alt={project.title}
+                      fill
+                      className="object-cover opacity-15 mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
+                    />
+                    {/* Gradient Overlay to ensure text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/70 to-transparent" />
+                  </div>
+                )}
+                
                 <div className="relative z-10">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                     <div>
