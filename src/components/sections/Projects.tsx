@@ -38,10 +38,11 @@ const projects = [
   },
   {
     id: "05",
-    title: "ENILS",
-    subtitle: "Edge-Native Interactive Learning System",
-    description: "Offline AI tutoring system designed for schools with limited connectivity. Uses local speech recognition, AI, and text-to-speech to provide voice-based learning without requiring the internet.",
-    tags: ["AI", "Edge Computing"],
+    title: "UdyogaMITra",
+    subtitle: "MITM Official Placement Portal",
+    description: "The official placement management platform for MITM College. Connects students, companies, and administrators in a seamless placement ecosystem powered by intelligent matching.",
+    tags: ["Full Stack", "Placement Portal", "Campus Recruitment"],
+    link: "https://mit-place-pro-five.vercel.app/login",
   }
 ];
 
