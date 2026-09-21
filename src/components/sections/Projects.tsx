@@ -90,23 +90,22 @@ export function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: 0.1 * idx }}
-                className="group bg-white/60 backdrop-blur-xl rounded-[24px] p-8 md:p-10 border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-shadow duration-300 relative overflow-hidden"
+                className="group bg-white/60 backdrop-blur-xl rounded-[24px] border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-shadow duration-300 flex flex-col overflow-hidden"
               >
-                {/* Optional Background Image */}
+                {/* Image Section (Top) */}
                 {project.image && (
-                  <div className="absolute inset-0 z-0 pointer-events-none">
+                  <div className="relative w-full h-48 md:h-64 overflow-hidden border-b border-black/5 bg-black/5">
                     <Image 
                       src={project.image} 
                       alt={project.title}
                       fill
-                      className="object-cover opacity-15 mix-blend-multiply group-hover:scale-105 transition-transform duration-700"
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
-                    {/* Gradient Overlay to ensure text readability */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/70 to-transparent" />
                   </div>
                 )}
                 
-                <div className="relative z-10">
+                {/* Content Section (Bottom) */}
+                <div className="relative z-10 p-8 md:p-10 flex flex-col flex-grow">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
@@ -125,14 +124,14 @@ export function Projects() {
                     </div>
                   </div>
                   
-                  <p className="text-base text-black/60 leading-[1.8] font-normal mb-8">
+                  <p className="text-base text-black/60 leading-[1.8] font-normal mb-8 flex-grow">
                     {project.description}
                   </p>
                   
                   <Link
                     href={project.link || "#"}
                     target={project.link ? "_blank" : "_self"}
-                    className="inline-flex items-center gap-2 text-sm font-bold text-black hover:opacity-70 transition-opacity group/link"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-black hover:opacity-70 transition-opacity group/link w-fit"
                   >
                     View details 
                     <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
