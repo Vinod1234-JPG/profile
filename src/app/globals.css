@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050505;
-  --foreground: #f3f4f6;
-  --muted: #a1a1aa;
-  --border: #27272a;
-  --accent: #f97316; /* orange-500 */
-  --accent-glow: rgba(249, 115, 22, 0.15);
+  --background: #fdfdfd;
+  --foreground: #111111;
+  --muted: #666666;
+  --border: #e5e7eb;
+  --accent: #000000;
+  --accent-glow: rgba(0, 0, 0, 0.05);
 }
 
 @theme inline {

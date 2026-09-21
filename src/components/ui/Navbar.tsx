@@ -22,7 +22,6 @@ export function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      // Determine active section
       const sections = navLinks.map(link => link.name.toLowerCase());
       let current = "";
       
@@ -40,7 +39,7 @@ export function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // init
+    handleScroll(); 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -51,27 +50,27 @@ export function Navbar() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={clsx(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-        isScrolled ? "bg-background/70 backdrop-blur-md border-b border-white/5 py-4" : "bg-transparent py-6"
+        isScrolled ? "bg-white/70 backdrop-blur-md border-b border-black/5 py-4" : "bg-transparent py-6"
       )}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tight flex items-center">
-          <span className="text-white">V</span><span className="text-accent">P</span>
+        <Link href="/" className="text-2xl font-bold tracking-tight flex items-center">
+          <span className="text-black">V</span><span className="text-black/50">P</span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="relative text-sm font-medium text-muted hover:text-white transition-colors py-2"
+              className="relative text-sm font-medium text-black/60 hover:text-black transition-colors py-2"
             >
               {link.name}
               {activeSection === link.name.toLowerCase() && (
                 <motion.div
                   layoutId="activeSection"
-                  className="absolute -bottom-[1px] left-0 right-0 h-0.5 bg-accent"
+                  className="absolute -bottom-[1px] left-0 right-0 h-0.5 bg-black"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.3 }}
@@ -81,16 +80,16 @@ export function Navbar() {
           ))}
           <Link
             href="#contact"
-            className="text-sm font-medium px-4 py-2 rounded-full border border-white/20 bg-background text-white hover:border-white/40 transition-colors flex items-center gap-2"
+            className="text-sm font-bold px-5 py-2.5 rounded-full border border-black/10 bg-black text-white hover:bg-black/80 transition-colors flex items-center gap-2"
           >
-            <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+            <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)]" />
             Available for work
           </Link>
         </nav>
 
         {/* Mobile Nav Toggle */}
         <button
-          className="md:hidden text-white p-2"
+          className="md:hidden text-black p-2"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -104,7 +103,7 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-background/95 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+            className="md:hidden bg-white/95 backdrop-blur-xl border-b border-black/5 overflow-hidden"
           >
             <div className="flex flex-col px-6 py-4 space-y-4">
               {navLinks.map((link) => (
@@ -112,18 +111,18 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium text-muted hover:text-white transition-colors"
+                  className="text-lg font-medium text-black/60 hover:text-black transition-colors"
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-white/10">
+              <div className="pt-4 border-t border-black/5">
                 <Link
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 bg-background text-white hover:border-white/40 font-medium text-sm"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-black/10 bg-black text-white font-medium text-sm"
                 >
-                  <span className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                  <span className="w-2 h-2 rounded-full bg-green-400 shadow-[0_0_8px_rgba(74,222,128,0.6)]" />
                   Available for work
                 </Link>
               </div>

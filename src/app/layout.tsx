@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 import { ScrollEffects } from "@/components/ui/ScrollEffects";
@@ -14,6 +14,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Vinod Patel | Portfolio",
   description: "Designer • Developer • Founder",
@@ -23,8 +28,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
-      style={{ colorScheme: "dark", scrollBehavior: "smooth" }}
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
+      style={{ colorScheme: "light", scrollBehavior: "smooth" }}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent/30 selection:text-accent cursor-none md:cursor-auto relative">
         {/* Subtle Corporate Grid Background */}
