@@ -43,6 +43,7 @@ const projects = [
     description: "The official placement management platform for MITM College. Connects students, companies, and administrators in a seamless placement ecosystem powered by intelligent matching.",
     tags: ["Full Stack", "Placement Portal", "Campus Recruitment"],
     link: "https://mit-place-pro-five.vercel.app/login",
+    image: "/projects/udyogamitra.png",
   }
 ];
 
