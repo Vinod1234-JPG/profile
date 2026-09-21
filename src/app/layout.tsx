@@ -31,9 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} h-full antialiased`}
       style={{ colorScheme: "light", scrollBehavior: "smooth" }}
     >
-      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-accent/30 selection:text-accent cursor-none md:cursor-auto relative">
-        {/* Subtle Corporate Grid Background */}
-        <div className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]"></div>
+      <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-black/10 selection:text-black cursor-none md:cursor-auto relative">
         <CustomCursor />
         <ScrollEffects />
         <div className="relative z-10 flex flex-col flex-grow">

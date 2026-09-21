@@ -44,7 +44,9 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-32 relative bg-[#050505] border-t border-white/5 overflow-hidden">
+    <section id="projects" className="py-32 relative bg-transparent overflow-hidden">
+
+      <div className="absolute bottom-0 right-[5%] w-[45vw] h-[45vw] bg-[#a8c6ff] rounded-full mix-blend-multiply filter blur-[120px] opacity-15 pointer-events-none parallax-slow" />
       
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
@@ -52,27 +54,24 @@ export function Projects() {
           {/* Left Column: Sticky Header */}
           <div className="lg:col-span-5 sticky-header pt-4">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
             >
-              {/* Label */}
-              <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase mb-8 block">
+              <span className="text-black/50 text-xs font-bold tracking-[0.2em] uppercase mb-8 block">
                 03 // SELECTED WORK
               </span>
               
-              {/* Headline */}
-              <h2 className="text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tight leading-[1.05] mb-8">
-                <span className="text-white block">Real-world</span>
-                <span className="text-white/40 block">solutions.</span>
+              <h2 className="text-5xl md:text-6xl lg:text-[72px] font-black tracking-tighter leading-[1.05] mb-8" style={{ fontFamily: "var(--font-playfair)" }}>
+                <span className="text-black block">Real-world</span>
+                <span className="text-black/30 block">solutions.</span>
               </h2>
               
-              {/* Sub-text with UI Accent */}
               <div className="flex gap-6 max-w-sm mt-12">
-                <div className="mt-1.5 shrink-0 flex items-center justify-center w-6 h-6 rounded-full border border-accent relative">
-                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                <div className="mt-1.5 shrink-0 flex items-center justify-center w-6 h-6 rounded-full border border-black/20 relative">
+                  <div className="w-2 h-2 bg-black rounded-full"></div>
                 </div>
-                <p className="text-base text-white/60 leading-relaxed font-medium">
+                <p className="text-base text-black/60 leading-relaxed font-medium">
                   Platforms, systems, and tools engineered to solve complex operational challenges.
                 </p>
               </div>
@@ -84,41 +83,38 @@ export function Projects() {
             {projects.map((project, idx) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ delay: 0.1 * idx }}
-                className="group bg-[#111111] rounded-[24px] p-8 md:p-10 border border-white/5 hover:border-white/10 transition-colors duration-300 relative overflow-hidden"
+                className="group bg-white/60 backdrop-blur-xl rounded-[24px] p-8 md:p-10 border border-black/5 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-shadow duration-300 relative overflow-hidden"
               >
-                {/* Subtle Hover Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
                 <div className="relative z-10">
                   <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                     <div>
                       <div className="flex items-center gap-3 mb-2">
-                        <span className="text-xs font-bold text-accent uppercase tracking-widest">{project.id}</span>
-                        <h3 className="text-2xl font-bold text-white tracking-tight">{project.title}</h3>
+                        <span className="text-xs font-bold text-black/40 uppercase tracking-widest">{project.id}</span>
+                        <h3 className="text-2xl font-bold text-black tracking-tight">{project.title}</h3>
                       </div>
-                      <p className="text-sm font-medium text-white/40">{project.subtitle}</p>
+                      <p className="text-sm font-medium text-black/40">{project.subtitle}</p>
                     </div>
                     
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map(tag => (
-                        <span key={tag} className="px-3 py-1 rounded-full bg-white/5 border border-white/5 text-[10px] font-bold text-white/60 uppercase tracking-wider">
+                        <span key={tag} className="px-3 py-1 rounded-full bg-black/5 text-[10px] font-bold text-black/60 uppercase tracking-wider">
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
                   
-                  <p className="text-base text-white/60 leading-[1.8] font-normal mb-8">
+                  <p className="text-base text-black/60 leading-[1.8] font-normal mb-8">
                     {project.description}
                   </p>
                   
                   <Link
                     href="#"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-accent transition-colors group/link"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-black hover:opacity-70 transition-opacity group/link"
                   >
                     View details 
                     <ArrowRight size={16} className="transition-transform group-hover/link:translate-x-1" />
