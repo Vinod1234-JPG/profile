@@ -23,9 +23,6 @@ export function Footer() {
               <Link href="https://github.com/vinodpatel" target="_blank" className="text-black/40 hover:text-black transition-colors">
                 <ExternalLink size={18} />
               </Link>
-              <Link href="https://linkedin.com/in/vinodpatel" target="_blank" className="text-black/40 hover:text-black transition-colors">
-                <ExternalLink size={18} />
-              </Link>
               <Link href="https://instagram.com/vinodpatel" target="_blank" className="text-black/40 hover:text-black transition-colors">
                 <ExternalLink size={18} />
               </Link>
