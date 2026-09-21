@@ -73,9 +73,6 @@ export function Contact() {
               </a>
 
               <div className="flex gap-4 mt-8">
-                <a href="https://linkedin.com/in/vinodpatel" target="_blank" className="p-3 rounded-xl bg-black/5 border border-black/10 text-black/60 hover:text-black hover:bg-black/10 transition-colors">
-                  <ExternalLink size={20} />
-                </a>
                 <a href="https://github.com/vinodpatel" target="_blank" className="p-3 rounded-xl bg-black/5 border border-black/10 text-black/60 hover:text-black hover:bg-black/10 transition-colors">
                   <ExternalLink size={20} />
                 </a>
