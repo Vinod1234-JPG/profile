@@ -21,6 +21,8 @@ const projects = [
     subtitle: "Engineering College ERP",
     description: "Governance-focused ERP for managing admissions, academics, attendance, internal assessments, examinations, mentorship, results, role-based access, and institutional workflows.",
     tags: ["ERP", "Backend", "React"],
+    link: "https://erp-client-9lbk.vercel.app/login?tenant=test",
+    image: "/projects/acadops-erp.png",
   },
   {
     id: "03",
