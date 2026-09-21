@@ -1,113 +1,113 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Database, Sparkles, PenTool, Video } from "lucide-react";
+import { Code2, Database, Sparkles, PenTool, Video, Layers } from "lucide-react";
 
 const skillCategories = [
   {
-    title: "Development",
+    title: "Engineering & Architecture",
     icon: Code2,
-    skills: ["C", "C++", "Python", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Node.js", "NestJS"],
-    colSpan: "md:col-span-2 lg:col-span-2"
+    skills: ["TypeScript", "React", "Next.js", "Node.js", "Python", "C++", "System Design"],
+    description: "Building scalable frontend applications and robust backend architectures."
   },
   {
-    title: "Backend & Data",
+    title: "Data & Infrastructure",
     icon: Database,
-    skills: ["PostgreSQL", "Supabase", "TypeORM", "REST APIs", "JWT", "Authentication", "RBAC"],
-    colSpan: "md:col-span-1 lg:col-span-1"
+    skills: ["PostgreSQL", "Supabase", "TypeORM", "REST APIs", "JWT", "Authentication"],
+    description: "Designing secure databases and efficient API integrations."
   },
   {
     title: "AI & Emerging Tech",
     icon: Sparkles,
-    skills: ["Local AI", "Small Language Models", "Edge AI", "Speech-to-Text", "Text-to-Speech", "Prompt Engineering", "Ollama", "Whisper", "Raspberry Pi"],
-    colSpan: "md:col-span-2 lg:col-span-2"
+    skills: ["Local LLMs", "Edge AI", "Speech-to-Text", "Prompt Engineering", "Ollama"],
+    description: "Integrating modern machine learning capabilities into production products."
   },
   {
-    title: "Design",
+    title: "Product Design",
     icon: PenTool,
-    skills: ["UI/UX", "Product Design", "Dashboard Design", "Responsive Design", "Visual Design", "Workflow Design"],
-    colSpan: "md:col-span-1 lg:col-span-1"
-  },
-  {
-    title: "Creative",
-    icon: Video,
-    skills: ["Video Editing", "YouTube", "Technical Content", "Screen Recording", "Visual Storytelling", "Motion Graphics"],
-    colSpan: "md:col-span-3 lg:col-span-3"
+    skills: ["UI/UX Design", "Wireframing", "Prototyping", "Design Systems", "Figma"],
+    description: "Creating intuitive, accessible, and highly-polished user interfaces."
   }
 ];
 
 export function Skills() {
   return (
-    <section id="skills" className="py-32 relative border-t border-white/5 bg-[#0a0a0a]">
-      {/* Background glow — parallax */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none parallax-slow" />
+    <section id="skills" className="py-32 relative bg-[#050505] overflow-hidden">
+      {/* Background glow — subtle */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px] pointer-events-none parallax-slow" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="mb-20"
-        >
-          <span className="text-accent text-sm font-semibold tracking-widest uppercase mb-4 block">
-            02 // Technical Arsenal
-          </span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 leading-tight">
-            Tools, technologies, <br className="hidden md:block" />
-            <span className="text-white/40">and creative disciplines.</span>
-          </h2>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start">
+          
+          {/* Left Column: Sticky Header */}
+          <div className="lg:col-span-5 sticky-header pt-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+            >
+              {/* Label */}
+              <span className="text-accent text-xs font-bold tracking-[0.2em] uppercase mb-8 block">
+                02 // CAPABILITIES
+              </span>
+              
+              {/* Headline */}
+              <h2 className="text-5xl md:text-6xl lg:text-[72px] font-bold tracking-tight leading-[1.05] mb-8">
+                <span className="text-white block">Full-stack</span>
+                <span className="text-white/40 block">expertise.</span>
+              </h2>
+              
+              {/* Sub-text with UI Accent */}
+              <div className="flex gap-6 max-w-sm mt-12">
+                <div className="mt-1.5 shrink-0 flex items-center justify-center w-6 h-6 rounded-full border border-accent relative">
+                  <div className="w-2 h-2 bg-accent rounded-full"></div>
+                </div>
+                <p className="text-base text-white/60 leading-relaxed font-medium">
+                  A comprehensive toolkit spanning from systems architecture to pixel-perfect interface design.
+                </p>
+              </div>
+            </motion.div>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, idx) => {
-            const Icon = category.icon;
-            return (
+          {/* Right Column: Skill Cards */}
+          <div className="lg:col-span-7 space-y-4">
+            {skillCategories.map((category, idx) => (
               <motion.div
                 key={category.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ delay: idx * 0.1 }}
-                className={`group relative glass rounded-3xl p-8 overflow-hidden cursor-none md:cursor-pointer border border-white/10 ${category.colSpan}`}
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  e.currentTarget.style.setProperty('--x', `${x}px`);
-                  e.currentTarget.style.setProperty('--y', `${y}px`);
-                }}
+                transition={{ delay: 0.1 * idx }}
+                className="bg-[#111111] rounded-[24px] p-8 md:px-10 border border-white/5 hover:border-white/10 transition-colors duration-300"
               >
-                {/* Spotlight effect */}
-                <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                  style={{
-                    background: 'radial-gradient(400px circle at var(--x, 50%) var(--y, 50%), rgba(249, 115, 22, 0.1), transparent 40%)'
-                  }}
-                />
-
-                <div className="relative z-10 flex flex-col h-full justify-between">
-                  <div>
-                    <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-accent/10 group-hover:border-accent/20 group-hover:text-accent transition-all duration-500 text-white/60">
-                      <Icon size={24} />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-6 tracking-tight">
-                      {category.title}
-                    </h3>
+                <div className="flex flex-col md:flex-row md:items-start gap-6">
+                  {/* Icon Container */}
+                  <div className="shrink-0 w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/60">
+                    <category.icon size={20} strokeWidth={1.5} />
                   </div>
-
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {category.skills.map((skill) => (
-                      <div
-                        key={skill}
-                        className="px-4 py-2 rounded-xl border border-white/5 bg-white/5 text-sm text-white/70 backdrop-blur-md transition-colors group-hover:border-white/10"
-                      >
-                        {skill}
-                      </div>
-                    ))}
+                  
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="text-xl font-bold text-white tracking-tight mb-2">{category.title}</h3>
+                      <p className="text-sm text-white/60 leading-relaxed">{category.description}</p>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2 pt-2">
+                      {category.skills.map(skill => (
+                        <span 
+                          key={skill}
+                          className="px-3 py-1.5 rounded-md bg-white/5 border border-white/5 text-xs font-medium text-white/80"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
+
         </div>
       </div>
     </section>
