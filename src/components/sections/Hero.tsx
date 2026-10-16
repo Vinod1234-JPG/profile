@@ -11,12 +11,12 @@ export function Hero() {
       id="hero" 
       className="relative min-h-screen flex flex-col justify-center pt-28 md:pt-36 pb-12 overflow-hidden bg-[#fdfdfd]"
     >
-      {/* Massive Vibrant Mesh Gradient Background */}
+      {/* Subtle Studio Ambient Gradient Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-[10%] -left-[10%] w-[60vw] h-[60vw] bg-[#ffc875] rounded-full mix-blend-multiply filter blur-[100px] opacity-70 animate-blob" />
-        <div className="absolute top-[20%] -right-[10%] w-[50vw] h-[50vw] bg-[#f2a8ff] rounded-full mix-blend-multiply filter blur-[120px] opacity-70 animate-blob animation-delay-2000" />
-        <div className="absolute -bottom-[20%] left-[20%] w-[55vw] h-[55vw] bg-[#ff5e7e] rounded-full mix-blend-multiply filter blur-[130px] opacity-60 animate-blob animation-delay-4000" />
-        <div className="absolute bottom-[10%] right-[10%] w-[45vw] h-[45vw] bg-[#a8c6ff] rounded-full mix-blend-multiply filter blur-[110px] opacity-60 animate-blob animation-delay-6000" />
+        <div className="absolute -top-[10%] -left-[10%] w-[55vw] h-[55vw] bg-[#ffedd5] rounded-full mix-blend-multiply filter blur-[120px] opacity-45 animate-blob" />
+        <div className="absolute top-[15%] -right-[10%] w-[50vw] h-[50vw] bg-[#f5d0fe] rounded-full mix-blend-multiply filter blur-[130px] opacity-40 animate-blob animation-delay-2000" />
+        <div className="absolute -bottom-[20%] left-[20%] w-[55vw] h-[55vw] bg-[#ffe4e6] rounded-full mix-blend-multiply filter blur-[140px] opacity-35 animate-blob animation-delay-4000" />
+        <div className="absolute bottom-[10%] right-[10%] w-[45vw] h-[45vw] bg-[#dbeafe] rounded-full mix-blend-multiply filter blur-[120px] opacity-40 animate-blob animation-delay-6000" />
       </div>
 
       {/* Exactly Three Animated Floating 3D Objects */}
@@ -32,28 +32,30 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="lg:col-span-7 space-y-8 text-left lg:pr-8"
           >
-            {/* Greeting */}
+            {/* Greeting / Brand Label */}
             <div className="flex items-center gap-4">
-              <span className="text-sm font-semibold tracking-[0.2em] text-black/60 uppercase">
-                HELLO, I'M
+              <span className="text-xs md:text-sm font-bold tracking-[0.25em] text-black/50 uppercase">
+                INNOVATION // DIGITAL SYSTEMS & PRODUCTS
               </span>
-              <div className="w-12 h-[2px] bg-black/60" />
+              <div className="w-12 h-[2px] bg-black/40" />
             </div>
 
-            {/* Main Headline - Serif */}
-            <h1 className="text-6xl sm:text-7xl md:text-[88px] font-black tracking-tighter text-black leading-[1.05]" style={{ fontFamily: "var(--font-playfair)" }}>
-              Hi, I'm <br className="hidden md:block" />
-              Vinod Patel —<br />
-              <span className="text-black/80">I build digital products<br />that make an impact.</span>
+            {/* Main Headline */}
+            <h1 className="text-5xl sm:text-6xl md:text-[80px] font-black tracking-tighter text-black leading-[1.05]" style={{ fontFamily: "var(--font-playfair)" }}>
+              Building the Future <br className="hidden md:block" />
+              Through Innovation. <br />
+              <span className="text-black/60 font-sans font-extrabold text-3xl sm:text-4xl md:text-[50px] tracking-tight block mt-3">
+                Engineered for impact.
+              </span>
             </h1>
 
             {/* Subtext */}
             <p className="text-lg md:text-xl text-black/70 max-w-xl leading-relaxed font-normal pt-2">
-              I’m a passionate UI/UX designer and front-end developer who loves turning ideas into meaningful digital experiences. I focus on clean design, smooth interactions and products that solve real problems.
+              We combine intentional design, cutting-edge software architecture, and intelligent 3D digital experiences to help ambitious businesses innovate and move forward.
             </p>
 
-            {/* Buttons matching Fig 2 */}
-            <div className="flex flex-wrap items-center gap-6 pt-6">
+            {/* Primary & Secondary Call to Action Buttons */}
+            <div className="flex flex-wrap items-center gap-6 pt-4">
               <Link
                 href="#projects"
                 className="flex items-center gap-4 group"
@@ -61,8 +63,8 @@ export function Hero() {
                 <div className="w-16 h-16 rounded-full border border-black flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
                   <ArrowDownRight size={24} className="text-black" />
                 </div>
-                <span className="text-sm font-semibold tracking-widest text-black/60 uppercase group-hover:text-black transition-colors">
-                  View My Work
+                <span className="text-sm font-semibold tracking-widest text-black/70 uppercase group-hover:text-black transition-colors">
+                  Explore Our Work
                 </span>
               </Link>
               
@@ -70,7 +72,7 @@ export function Hero() {
                 href="#contact"
                 className="px-8 py-4 rounded-full border-2 border-black/10 bg-transparent hover:bg-black/5 text-black font-semibold text-sm tracking-widest uppercase transition-all duration-300"
               >
-                Get In Touch
+                Contact Our Team
               </Link>
             </div>
           </motion.div>
