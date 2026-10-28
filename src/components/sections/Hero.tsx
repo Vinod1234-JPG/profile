@@ -84,20 +84,6 @@ export function Hero() {
           >
             <div className="relative w-full max-w-[500px] h-[460px] lg:h-[540px] flex items-center justify-center pointer-events-none">
               
-              {/* Center subtle interactive glow indicator */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0.8 }}
-                className="absolute bottom-4 left-1/2 -translate-x-1/2 pointer-events-auto"
-              >
-                <div className="bg-white/70 backdrop-blur-md px-4 py-1.5 rounded-full border border-black/10 flex items-center gap-2 shadow-[0_4px_20px_rgb(0,0,0,0.06)]">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-black/60">
-                    Real-time 3D • Interactive Parallax
-                  </span>
-                </div>
-              </motion.div>
 
               {/* Floating Badge 1 (Top Left) */}
               <motion.div 
