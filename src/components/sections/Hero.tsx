@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDownRight, Monitor, Box, Code2, Sparkles } from "lucide-react";
+import { ArrowDownRight, Monitor, Box, Code2, PenTool } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { AnimatedBackground } from "@/components/canvas/AnimatedBackground";
 
 export function Hero() {
   return (
@@ -18,9 +18,6 @@ export function Hero() {
         <div className="absolute -bottom-[20%] left-[20%] w-[55vw] h-[55vw] bg-[#ff5e7e] rounded-full mix-blend-multiply filter blur-[130px] opacity-60 animate-blob animation-delay-4000" />
         <div className="absolute bottom-[10%] right-[10%] w-[45vw] h-[45vw] bg-[#a8c6ff] rounded-full mix-blend-multiply filter blur-[110px] opacity-60 animate-blob animation-delay-6000" />
       </div>
-
-      {/* Exactly Three Animated Floating 3D Objects */}
-      <AnimatedBackground />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -75,26 +72,37 @@ export function Hero() {
             </div>
           </motion.div>
 
-          {/* Right Column: 3D Visual Stage + Outer Ambient Badges */}
+          {/* Right Column: Hero Portrait + Floating Badges */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-            className="lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0 min-h-[460px] lg:min-h-[560px]"
+            className="lg:col-span-5 relative flex justify-center items-center mt-12 lg:mt-0"
           >
-            <div className="relative w-full max-w-[500px] h-[460px] lg:h-[540px] flex items-center justify-center pointer-events-none">
+            <div className="relative w-full max-w-[400px] sm:max-w-[420px] aspect-[2/3] flex items-center justify-center">
               
+              {/* Portrait Frame */}
+              <div className="relative z-10 w-full h-full rounded-[36px] overflow-hidden shadow-[0_25px_60px_rgba(0,0,0,0.14)] border border-black/10 bg-white/40 backdrop-blur-sm">
+                <Image 
+                  src="/hero-portrait.jpg"
+                  alt="Vinod Patel - Designer & Developer"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 85vw, 420px"
+                  className="object-cover object-center"
+                />
+              </div>
 
               {/* Floating Badge 1 (Top Left) */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="absolute top-[8%] -left-[4%] md:-left-[2%] z-20 pointer-events-auto"
+                className="absolute top-[10%] -left-[10%] md:-left-[8%] z-20 pointer-events-auto"
               >
-                <div className="bg-white/80 backdrop-blur-md px-4 py-2.5 rounded-full border border-black/10 flex items-center gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+                <div className="bg-white/85 backdrop-blur-md px-4 py-2.5 rounded-full border border-black/10 flex items-center gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                   <Monitor size={16} className="text-black" />
-                  <span className="text-sm font-bold text-black/80">UI/UX Architecture</span>
+                  <span className="text-sm font-bold text-black/80">UI/UX Design</span>
                 </div>
               </motion.div>
 
@@ -103,9 +111,9 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="absolute top-[12%] -right-[4%] md:right-0 z-20 pointer-events-auto"
+                className="absolute top-[16%] -right-[10%] md:-right-[8%] z-20 pointer-events-auto"
               >
-                <div className="bg-white/80 backdrop-blur-md px-4 py-2.5 rounded-full border border-black/10 flex items-center gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+                <div className="bg-white/85 backdrop-blur-md px-4 py-2.5 rounded-full border border-black/10 flex items-center gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                   <Box size={16} className="text-black" />
                   <span className="text-sm font-bold text-black/80">Product Strategy</span>
                 </div>
@@ -116,24 +124,24 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.7 }}
-                className="absolute bottom-[16%] -left-[6%] md:-left-[4%] z-20 pointer-events-auto"
+                className="absolute bottom-[20%] -left-[12%] md:-left-[10%] z-20 pointer-events-auto"
               >
-                <div className="bg-white/80 backdrop-blur-md px-4 py-2.5 rounded-full border border-black/10 flex items-center gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+                <div className="bg-white/85 backdrop-blur-md px-4 py-2.5 rounded-full border border-black/10 flex items-center gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
                   <Code2 size={16} className="text-black" />
-                  <span className="text-sm font-bold text-black/80">Engineering Systems</span>
+                  <span className="text-sm font-bold text-black/80">Web Development</span>
                 </div>
               </motion.div>
 
-              {/* Floating Badge 4 (Middle Right) */}
+              {/* Floating Badge 4 (Bottom Right) */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="absolute bottom-[28%] -right-[8%] md:-right-[2%] z-20 pointer-events-auto"
+                className="absolute bottom-[10%] -right-[10%] md:-right-[8%] z-20 pointer-events-auto"
               >
-                <div className="bg-white/80 backdrop-blur-md px-4 py-2.5 rounded-full border border-black/10 flex items-center gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
-                  <Sparkles size={16} className="text-black" />
-                  <span className="text-sm font-bold text-black/80">3D Spatial Motion</span>
+                <div className="bg-white/85 backdrop-blur-md px-4 py-2.5 rounded-full border border-black/10 flex items-center gap-3 shadow-[0_8px_30px_rgb(0,0,0,0.08)]">
+                  <PenTool size={16} className="text-black" />
+                  <span className="text-sm font-bold text-black/80">Brand Design</span>
                 </div>
               </motion.div>
 
